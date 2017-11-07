@@ -1,0 +1,55 @@
+<html>
+<head>
+  <link rel="stylesheet" href="style.css">
+  <script
+    src="https://code.jquery.com/jquery-3.2.1.min.js"
+    integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+    crossorigin="anonymous"></script>
+  <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js">
+  </script>
+
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBypkjnkns2gxDaw6-H5d-syTT7Loe1PD0&libraries=places&callback=initAutocomplete"
+       async defer></script>
+  <script src="add.js">
+  </script>
+</head>
+
+<body style="background-color: rgba(231, 76, 60,1.0)">
+
+<div id="addmap">
+</div>
+<div id="addinput">
+  <form>
+    <table>
+    <tr> <td>Search: </td><td><input id="location" type="text" placeholder="Location"></input></td></tr>
+    <tr> <td>Name:</td><td><input type="text" id="name" value="tanner"> </input> </td></tr>
+    <tr> <td>MapID:</td><td><input type="text" id="mapsid"> </input> </td></tr>
+    <tr> <td>Lat: </td><td><input type="number" id="lat" step="0.0000001" value="49.270995"></input></td> </tr>
+    <tr> <td>Long:</td><td><input type="number" id="long" step="0.0000001" value="-123.156155"></input></td></tr>
+
+    <tr> <td>Type:</td><td>
+      <Select id="etype">
+        <option value="Trivia">Trivia</option>
+      </select>
+    </td></tr>
+
+    <tr> <td>Day: </td><td>
+      <Select id="dayInput" name="day">
+        <option value="Monday">Monday</option>
+        <option value="Tuesday">Tuesday</option>
+        <option value="Wednesday">Wednesday</option>
+        <option value="Thursday">Thursday</option>
+        <option value="Friday">Friday</option>
+        <option value="Saterday">Saterday</option>
+        <option value="Sunday">Sunday</option>
+      </select>
+      </td></tr>
+      <tr> <td>Comments</td><td><textarea id="comments"></textarea></td></tr>
+
+    </table>
+    <a href="#" class="submitCreate"><h1>Submit</h1></a>
+  </form>
+  <div class="resultsOut"></div>
+</div>
+</body>
+</html>

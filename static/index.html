@@ -1,0 +1,43 @@
+<html>
+<head>
+  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script
+    src="https://code.jquery.com/jquery-3.2.1.min.js"
+    integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+    crossorigin="anonymous"></script>
+  <script type="text/javascript" src="mapstyle.js"></script>
+  <script src="javascript.js"></script>
+
+  <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js">
+  </script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBypkjnkns2gxDaw6-H5d-syTT7Loe1PD0&libraries=places&callback=initAutocomplete"
+       async defer></script>
+</head>
+
+
+<body>
+  <div id="map">
+  </div>
+  <div id="userinput">
+    <div class="contols">
+      <input id="location" type="text" placeholder="Location"></input>
+      <Select id="Day" name="day">
+        <option value="All">All</option>
+        <option value="Monday">Monday</option>
+        <option value="Tuesday">Tuesday</option>
+        <option value="Wednesday">Wednesday</option>
+        <option value="Thursday">Thursday</option>
+        <option value="Friday">Friday</option>
+        <option value="Saterday">Saterday</option>
+        <option value="Sunday">Sunday</option>
+      </select>
+      <Select id="event" name="event">
+        <option value="All">All</option>
+        <option value="Trivia">Trivia</option>
+      </select>
+
+    </div>
+  </div>
+</body>
+</html>

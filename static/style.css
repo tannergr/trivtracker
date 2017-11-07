@@ -1,0 +1,135 @@
+#map {
+   height: 100%;
+ }
+ #addmap{
+   height: 100%;
+   width: 50%;
+   float: left;
+ }
+ #addinput{
+   padding-top: 25px;
+   margin-left: 55%;
+ }
+a[href^="http://maps.google.com/maps"],
+a[href^="https://maps.google.com/maps"],
+a[href^="https://www.google.com/maps"] {
+    display: none !important;
+}
+.gmnoprint:not(.gm-bundled-control) {
+    display: none;
+}
+.gm-bundled-control .gmnoprint {
+    display: block;
+}
+.pac-container:after {
+    /* Disclaimer: not needed to show 'powered by Google' if also a Google Map is shown */
+
+    background-image: none !important;
+    height: 0px;
+}
+ /* Optional: Makes the sample page fill the window. */
+html, body {
+   height: 100%;
+   margin: 0;
+   padding: 0;
+   font-family: 'Raleway', sans-serif;
+}
+#userinput{
+  width: 100%;
+  height: 60px;
+  position: fixed;
+  top:0;
+  background-color: rgba(52, 73, 94,0.7);
+  display: inline-block;
+  padding-top: 25px;
+}
+#location, input{
+  background-color: transparent;
+  border: none;
+  border-bottom: solid 1px;
+  border-color: white;
+  color: white;
+  font-size: 24px;
+  margin-left: 20px;
+  font-family: 'Raleway', sans-serif;
+}
+#dayInput, #etype, #comments{
+  font-family: 'Raleway', sans-serif;
+  background-color: transparent;
+  border: none;
+  border-bottom: solid 1px;
+  border-color: white;
+  color: white;
+  font-size: 24px;
+  padding-bottom: 1px;
+  margin-left: 20px
+}
+#dayInput>option, #etype>option{
+  background-color: rgba(192, 57, 43,1.0);
+  color: white
+}
+
+#Day, #event, option{
+  font-family: 'Raleway', sans-serif;
+  background-color: transparent;
+  border: none;
+  border-bottom: solid 1px;
+  border-color: white;
+  color: white;
+  font-size: 24px;
+  padding-bottom: 1px;
+  margin-left: 20px
+}
+#Day>option, #event>option, .pac-container{
+  background-color: rgba(52, 73, 94,0.9);
+  color: white;
+  font-family: 'Raleway', sans-serif;
+}
+.pac-item-query{
+  color:white;
+}
+.pac-item-selected, .pac-item:hover{
+  background-color: rgba(52, 73, 94,1);
+}
+.activities{
+  display: inline-block;
+}
+.activity{
+  height: 30px;
+  width: 24px;
+  margin-left: 30px;
+}
+#taco{
+  background-color: yellow;
+  float: left;
+}
+#kare{
+  background-color: orange;
+  float: left;
+}
+#triv{
+  background-color: green;
+  float: left;
+}
+.controls{
+  display: inline-block;
+}
+::-webkit-input-placeholder { /* Chrome, Safari */
+   color:  rgba(255, 255, 255, 0.7);
+   font-size: 24px;
+}
+
+:-moz-placeholder {           /* Firefox 18- */
+   color:rgba(255, 255, 255, 0.7);
+   font-size: 24px;
+}
+
+::-moz-placeholder {          /* Firefox 19+ */
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 24px;
+}
+
+:-ms-input-placeholder {      /* Internet Explorer */
+  color:rgba(255, 255, 255, 0.7);
+  font-size: 24px;
+}
