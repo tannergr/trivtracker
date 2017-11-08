@@ -11,7 +11,7 @@ function initAutocomplete() {
   center: {lat: mapstart.lat, lng: mapstart.long},
     zoom: 13,
     mapTypeId: 'roadmap',
-    styles: mapstyle,
+    //styles: mapstyle,
     zoomControlOptions: {
                     style: google.maps.ZoomControlStyle.SMALL,
                     position: google.maps.ControlPosition.RIGHT_BOTTOM
