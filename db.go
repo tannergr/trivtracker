@@ -10,7 +10,10 @@ import (
 
 func initDB(){
   var err error
-  db, err = sql.Open("postgres", "user=Tanner password=triv dbname=funthings sslmode=disable")
+  psqlInfo := fmt.Sprintf("host=%s port=%d user=%s "+
+    "password=%s dbname=%s sslmode=disable",
+    DB_HOST, DB_PORT, DB_USER, DB_PASSWORD, DB_NAME)
+  db, err = sql.Open("postgres", psqlInfo)
   if err != nil {
     log.Fatal(err)
   }
