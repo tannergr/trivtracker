@@ -1,7 +1,6 @@
 <html>
 <head>
   <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
   <script
     src="https://code.jquery.com/jquery-3.2.1.min.js"
     integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
@@ -13,17 +12,41 @@
   </script>
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBxoB_lMLGScuwVei5rmN-usckcNu_tMj0&libraries=places&callback=initAutocomplete"
        async defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/components/sidebar.js"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/components/sidebar.css" rel="stylesheet">
+
+  <script src="semantic/transition.js"></script>
+  <link href="semantic/transition.css" rel="stylesheet">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/components/dimmer.min.js"></script>
+  <link href="semantic/dimmer.css" rel="stylesheet">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/components/modal.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/components/modal.css" rel="stylesheet">
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/components/button.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/components/icon.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/components/grid.css" rel="stylesheet">
+
+  <script src="google-places.js"></script>
+  <link href="google-places.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 
 
 <body>
-  <div id="map">
   </div>
+  <div class="ui right sidebar">
+
+  </div>
+  <div class="pusher">
+    <div id="map">
+    </div>
   <div id="userinput">
     <div class="contols">
       <input id="location" type="text" placeholder="Location"></input>
       <Select id="Day" name="day">
-        <option value="All">All</option>
+        <option value="All">Any Day</option>
         <option value="Monday">Monday</option>
         <option value="Tuesday">Tuesday</option>
         <option value="Wednesday">Wednesday</option>
@@ -33,11 +56,57 @@
         <option value="Sunday">Sunday</option>
       </select>
       <Select id="event" name="event">
-        <option value="All">All</option>
+        <option value="All">All Events</option>
         <option value="Trivia">Trivia</option>
       </select>
 
+      </div>
     </div>
+
   </div>
+<div class="ui small modal" id="ww">
+
+<div class="header">
+  <h1 class="welcome">Hello</h1>
+</div>
+<i class="close icon" style="color: white"></i>
+<div class="content">
+  <p class="welcome">Where are you?</p>
+  <a href="#" id="uselocationbutton" class="ui toggle button">Use Current Location</a> Or
+  <input id="startlocation" type="text" placeholder="Enter Location"></input>
+  <div class="ui grid" style="padding-top:10%">
+  <div class="ui left">
+      <p class="welcome"> What are you looking for? </p>
+      <Select id="startevent" name="event">
+        <option value="All">All Events</option>
+        <option value="Trivia">Trivia</option>
+      </select>
+  </div>
+  <div class="right">
+      <p class="welcome" class="welcome"> Which Day? </p>
+      <Select id="startDay" name="day">
+        <option value="All">Any Day</option>
+        <option value="Monday">Monday</option>
+        <option value="Tuesday">Tuesday</option>
+        <option value="Wednesday">Wednesday</option>
+        <option value="Thursday">Thursday</option>
+        <option value="Friday">Friday</option>
+        <option value="Saterday">Saterday</option>
+        <option value="Sunday">Sunday</option>
+      </select>
+  </div>
+</div>
+</div>
+<div class="actions">
+  <div class="ui positive labeled icon button" id="searchbutton">
+    Search
+    <i class="checkmark icon"></i>
+  </div>
+</div>
+</div>
+<div class="adminlogin">
+  <a href="login"><i class="Configure icon"></i></a>
+</div>
+
 </body>
 </html>

@@ -1,3 +1,4 @@
 *.exe
 cred.go
 trivtracker
+creds.json

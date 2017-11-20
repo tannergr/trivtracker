@@ -1,6 +1,6 @@
-$(window).ready(()=>{
+
+$(document).ready(()=>{
   $(".submitCreate").click(()=>{
-    console.log("hello");
     var newEntry = new Object();
     newEntry.barname = $("#name").val();
     newEntry.etype = $("#etype").val();
@@ -13,6 +13,7 @@ $(window).ready(()=>{
         url: '/places',
         type: 'PUT',
         data: JSON.stringify(newEntry),
+        headers: {"accessToken": "accessToken"},
         success: function(result) {
             //console.log(result);
         }
@@ -60,7 +61,8 @@ function initAutocomplete() {
     }
     // Set form values
     $("#name").val(places[0].name);
-    $("#mapsid").val(places[0].id);
+    $("#mapsid").val(places[0].place_id);
+    console.log(places[0]);
     $("#lat").val(places[0].geometry.location.lat());
     $("#long").val(places[0].geometry.location.lng());
 

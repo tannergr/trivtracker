@@ -36,21 +36,22 @@ html, body {
 }
 #userinput{
   width: 100%;
-  height: 60px;
+  min-height: 60px;
   position: fixed;
+  z-index: 100;
   top:0;
   background-color: rgba(52, 73, 94,0.7);
   display: inline-block;
   padding-top: 25px;
 }
-#location, input{
+#location{
   background-color: transparent;
   border: none;
   border-bottom: solid 1px;
   border-color: white;
   color: white;
   font-size: 24px;
-  margin-left: 20px;
+  margin: 10px 0 10px 20px;
   font-family: 'Raleway', sans-serif;
 }
 #dayInput, #etype, #comments{
@@ -61,8 +62,7 @@ html, body {
   border-color: white;
   color: white;
   font-size: 24px;
-  padding-bottom: 1px;
-  margin-left: 20px
+  margin: 0 0 21px 0px;
 }
 #dayInput>option, #etype>option{
   background-color: rgba(192, 57, 43,1.0);
@@ -78,18 +78,44 @@ html, body {
   color: white;
   font-size: 24px;
   padding-bottom: 1px;
-  margin-left: 20px
+  margin: 10px 0 10px 20px;
 }
-#Day>option, #event>option, .pac-container{
+#startevent, #startDay, option{
+ font-family: 'Raleway', sans-serif;
+ background-color: transparent;
+ border: none;
+ border-bottom: solid 1px;
+ border-color: white;
+ color: white;
+ font-size: 24px;
+ padding-bottom: 1px;
+}
+#startlocation{
+  background-color: transparent;
+  border: none;
+  border-bottom: solid 1px;
+  border-color: white;
+  color: white;
+  font-size: 24px;
+  font-family: 'Raleway', sans-serif;
+  margin: 10px 0 10px 0;
+}
+#Day>option, #event>option,#startevent>option,
+#startDay>option, .pac-container{
   background-color: rgba(52, 73, 94,0.9);
   color: white;
   font-family: 'Raleway', sans-serif;
+}
+.pac-container {
+    z-index: 1051 !important;
+    background-color: rgba(52, 73, 94,1);
 }
 .pac-item-query{
   color:white;
 }
 .pac-item-selected, .pac-item:hover{
   background-color: rgba(52, 73, 94,1);
+  z-index: 102;
 }
 .activities{
   display: inline-block;
@@ -132,4 +158,64 @@ html, body {
 :-ms-input-placeholder {      /* Internet Explorer */
   color:rgba(255, 255, 255, 0.7);
   font-size: 24px;
+}
+.ui.sidebar{
+  background-color: rgba(236, 240, 241,1.0);
+  padding: 0 5% 0 5% ;
+  height:100%;
+}
+.ui.sidebar>h1{
+  font-size: 32px;
+}
+#google-reviews{
+  overflow-y: scroll;
+  height: 60%;
+}
+#ww{
+  background-color: rgba(52, 73, 94,0.8);
+}
+#ww>.header{
+  border-bottom: solid 1px;
+  border-color: rgba(255, 255, 255, 0.2);
+}
+#ww>.header, #ww>.content, #ww>.actions{
+  background: rgba(52, 73, 94,0);
+  background-color: rgba(52, 73, 94,0);
+}
+#ww>.content{
+  color: white;
+  width:inherit;
+}
+.left{
+  float: left;
+  min-width: 40%;
+  border-top: 1px;
+}
+.right{
+  float: right;
+  min-width: 50%;
+}
+#searchbutton{
+    float:right;
+    margin: 3%;
+}
+.ui.dimmer{
+  background: rgba(0, 0, 0, 0.6);
+}
+h1.welcome{
+  margin: 5px 0 0 5px;
+  color: white;
+  font-family: 'Raleway', sans-serif;
+}
+p.welcome{
+  font-size: 24px;
+}
+.adminlogin{
+  bottom: 0;
+  left: 0;
+  position:fixed;
+}
+.adminlogin>a{
+  text-decoration: none;
+  color: black;
 }

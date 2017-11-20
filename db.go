@@ -64,3 +64,16 @@ func deleteDB(id int)(sql.Result){
   }
   return res
 }
+func checkDBadmin(sub string)(bool){
+  rows := db.QueryRow("Select Count(*) from admin where sub=$1", sub)
+
+  var count int;
+  err := rows.Scan(&count)
+  if err != nil{
+    panic(err)
+  }
+  if(count > 0){
+    return true
+  }
+  return false
+}

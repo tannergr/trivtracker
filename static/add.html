@@ -1,6 +1,24 @@
 <html>
 <head>
-  <link rel="stylesheet" href="style.css">
+  <script>
+    window.fbAsyncInit = function() {
+      FB.init({
+        appId            : '465037433897124',
+        autoLogAppEvents : true,
+        xfbml            : true,
+        version          : 'v2.11'
+      });
+    };
+
+    (function(d, s, id){
+       var js, fjs = d.getElementsByTagName(s)[0];
+       if (d.getElementById(id)) {return;}
+       js = d.createElement(s); js.id = id;
+       js.src = "https://connect.facebook.net/en_US/sdk.js";
+       fjs.parentNode.insertBefore(js, fjs);
+     }(document, 'script', 'facebook-jssdk'));
+ </script>
+  <link rel="stylesheet" href="../style.css">
   <script
     src="https://code.jquery.com/jquery-3.2.1.min.js"
     integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
@@ -10,7 +28,8 @@
 
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBxoB_lMLGScuwVei5rmN-usckcNu_tMj0&libraries=places&callback=initAutocomplete"
        async defer></script>
-  <script src="add.js">
+
+  <script src="../add.js">
   </script>
 </head>
 
