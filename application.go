@@ -61,7 +61,7 @@ func randToken() string {
 }
 
 func init() {
-  initDB();
+  //initDB();
 	store.Options = &sessions.Options{
 		Domain:   "127.0.0.1",
 		Path:     "/",
@@ -93,13 +93,13 @@ func init() {
 
 func main() {
     router := mux.NewRouter()
-    router.HandleFunc("/places", GetPlaces).Methods("GET")
-    router.HandleFunc("/places", CreatePlace).Methods("PUT")
-    router.HandleFunc("/places/{id}", DeletePlace).Methods("DELETE")
-    //router.HandleFunc("/edit", adminHome)
-    router.HandleFunc("/login", loginHandler)
-  	router.HandleFunc("/auth", authHandler)
-  	router.HandleFunc("/user", userHandler)
+    // router.HandleFunc("/places", GetPlaces).Methods("GET")
+    // router.HandleFunc("/places", CreatePlace).Methods("PUT")
+    // router.HandleFunc("/places/{id}", DeletePlace).Methods("DELETE")
+    // //router.HandleFunc("/edit", adminHome)
+    // router.HandleFunc("/login", loginHandler)
+  	// router.HandleFunc("/auth", authHandler)
+  	// router.HandleFunc("/user", userHandler)
 
     router.PathPrefix("/").Handler(http.FileServer(http.Dir("./static/")))
     log.Fatal(http.ListenAndServe(":8000", router))
