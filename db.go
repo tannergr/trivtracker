@@ -6,7 +6,7 @@ import (
   _ "github.com/lib/pq"
   "database/sql"
   "fmt"
-  //"os"
+  "os"
 )
 
 func initDB(){
