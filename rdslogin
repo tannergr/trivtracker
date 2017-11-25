@@ -1,0 +1,2 @@
+psql --host=triviatracker.cxohjsm6dmkb.us-west-2.rds.amazonaws.com --port=5432 --username tannergr --password --dbname=triviaspots
+

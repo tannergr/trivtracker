@@ -1,1 +1,3 @@
-go run *.go
+go get ./..
+
+go build
