@@ -70,13 +70,15 @@ func init() {
 	}
 
 	gob.Register(&User{})
-	file, err := ioutil.ReadFile("./creds.json")
-	if err != nil {
-		fmt.Printf("File Error: %v\n", err)
-		os.Exit(1)
-	}
-
-	json.Unmarshal(file, &cred)
+	// file, err := ioutil.ReadFile("./creds.json")
+	// if err != nil {
+	// 	fmt.Printf("File Error: %v\n", err)
+	// 	os.Exit(1)
+	// }
+  //
+	// json.Unmarshal(file, &cred)
+  cred.Cid = os.Getenv("Cid")
+  cred.Csecret = os.Getenv("Csecret")
 
 	conf = &oauth2.Config{
 		ClientID:     cred.Cid,
