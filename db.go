@@ -65,6 +65,7 @@ func deleteDB(id int)(sql.Result){
   return res
 }
 func checkDBadmin(sub string)(bool){
+  fmt.Println(sub)
   rows := db.QueryRow("Select Count(*) from admin where sub=$1", sub)
 
   var count int;
