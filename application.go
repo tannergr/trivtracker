@@ -104,5 +104,5 @@ func main() {
   	router.HandleFunc("/user", userHandler)
 
     router.PathPrefix("/").Handler(http.FileServer(http.Dir("./static/")))
-    log.Fatal(http.ListenAndServe(os.Getenv("PORT"), router))
+    log.Fatal(http.ListenAndServe(":"+os.Getenv("PORT"), router))
 }
