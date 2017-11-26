@@ -83,7 +83,7 @@ func init() {
 	conf = &oauth2.Config{
 		ClientID:     cred.Cid,
 		ClientSecret: cred.Csecret,
-		RedirectURL:  "http://127.0.0.1:80/auth",
+		RedirectURL:  "http://127.0.0.1:8000/auth",
 		Scopes: []string{
 			// scopes allow you to selectively choose the permissions you need access to
 			// for simple login you can just use userinfo.email
@@ -104,5 +104,5 @@ func main() {
   	router.HandleFunc("/user", userHandler)
 
     router.PathPrefix("/").Handler(http.FileServer(http.Dir("./static/")))
-    log.Fatal(http.ListenAndServe(":80", router))
+    log.Fatal(http.ListenAndServe(":8000", router))
 }
