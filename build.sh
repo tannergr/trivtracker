@@ -1,3 +1,0 @@
-go get ./..
-
-go build

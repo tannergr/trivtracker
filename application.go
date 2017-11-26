@@ -102,5 +102,5 @@ func main() {
   	router.HandleFunc("/user", userHandler)
 
     router.PathPrefix("/").Handler(http.FileServer(http.Dir("./static/")))
-    log.Fatal(http.ListenAndServe(":3000", router))
+    log.Fatal(http.ListenAndServe(":80", router))
 }
