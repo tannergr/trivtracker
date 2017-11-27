@@ -1,5 +1,16 @@
 {
   "AWSEBDockerrunVersion": "1",
-  
-  "Logging": "/var/log/nginx"
+  "Authentication":{
+    "Bucket":"dockertrivconf",
+    "Key":"conf/.dockercfg"
+  },
+  "Image": {
+    "Name": "tannergr/trivtracker",
+    "Update": "true"
+  },
+  "Ports": [
+    {
+      "ContainerPort": "8000"
+    }
+  ]
 }
