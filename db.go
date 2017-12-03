@@ -6,7 +6,7 @@ import (
   _ "github.com/lib/pq"
   "database/sql"
   "fmt"
-  //"os"
+  "os"
 )
 
 func initDB(){
@@ -17,10 +17,10 @@ func initDB(){
   // DB_PORT := 5432
 
   var err error
-  psqlInfo := fmt.Sprintf("host=%s port=%d user=%s "+
-    "password=%s dbname=%s sslmode=disable",
-    DB_HOST, DB_PORT, DB_USER, DB_PASSWORD, DB_NAME)
-  db, err = sql.Open("postgres", psqlInfo)
+  // psqlInfo := fmt.Sprintf("host=%s port=%d user=%s "+
+  //   "password=%s dbname=%s sslmode=disable",
+  //   DB_HOST, DB_PORT, DB_USER, DB_PASSWORD, DB_NAME)
+  db, err = sql.Open("postgres", os.Getenv("DATABASE_URL"))
   if err != nil {
     log.Fatal(err)
   }

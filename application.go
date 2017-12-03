@@ -5,14 +5,14 @@ import (
   	"github.com/gorilla/sessions"
     "log"
     "net/http"
-    "fmt"
+    //"fmt"
     	"crypto/rand"
     	"encoding/base64"
     	"encoding/gob"
-    	"encoding/json"
+    	//"encoding/json"
     	"golang.org/x/oauth2"
     	"golang.org/x/oauth2/google"
-    	"io/ioutil"
+    	//"io/ioutil"
       "os"
     _ "github.com/lib/pq"
     "database/sql"
@@ -61,7 +61,7 @@ func randToken() string {
 }
 
 func init() {
-  //initDB();
+  initDB();
 	store.Options = &sessions.Options{
 		Domain:   "http://damp-tor-15088.herokuapp.com",
 		Path:     "/",
@@ -70,13 +70,15 @@ func init() {
 	}
 
 	gob.Register(&User{})
-	file, err := ioutil.ReadFile("./creds.json")
-	if err != nil {
-		fmt.Printf("File Error: %v\n", err)
-		os.Exit(1)
-	}
-
-	json.Unmarshal(file, &cred)
+	// file, err := ioutil.ReadFile("./creds.json")
+	// if err != nil {
+	// 	fmt.Printf("File Error: %v\n", err)
+	// 	os.Exit(1)
+	// }
+  //
+	// json.Unmarshal(file, &cred)
+  cred.Cid = os.Getenv("Cid")
+  cred.Csecret = os.Getenv("Csecret")
 
 	conf = &oauth2.Config{
 		ClientID:     cred.Cid,
@@ -93,14 +95,14 @@ func init() {
 
 func main() {
     router := mux.NewRouter()
-    // router.HandleFunc("/places", GetPlaces).Methods("GET")
-    // router.HandleFunc("/places", CreatePlace).Methods("PUT")
-    // router.HandleFunc("/places/{id}", DeletePlace).Methods("DELETE")
-    // //router.HandleFunc("/edit", adminHome)
-    // router.HandleFunc("/login", loginHandler)
-  	// router.HandleFunc("/auth", authHandler)
-  	// router.HandleFunc("/user", userHandler)
+    router.HandleFunc("/places", GetPlaces).Methods("GET")
+    router.HandleFunc("/places", CreatePlace).Methods("PUT")
+    router.HandleFunc("/places/{id}", DeletePlace).Methods("DELETE")
+    //router.HandleFunc("/edit", adminHome)
+    router.HandleFunc("/login", loginHandler)
+  	router.HandleFunc("/auth", authHandler)
+  	router.HandleFunc("/user", userHandler)
 
     router.PathPrefix("/").Handler(http.FileServer(http.Dir("./static/")))
-    log.Fatal(http.ListenAndServe(":8000", router))
+    log.Fatal(http.ListenAndServe(":"+os.Getenv("PORT"), router))
 }
