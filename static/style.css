@@ -34,7 +34,24 @@ html, body {
    padding: 0;
    font-family: 'Raleway', sans-serif;
 }
+.logo{
+  float:left;
+}
+.neon, .nonneon{
+  margin: 0;
+  color: rgb(150,200,150);
+  text-shadow:
+    0 0 5px rgb(250,250,250),
+    0 0 10px rgb(250,250,250),
+    0 0 20px rgb(250,250,250),
+    0 0 40px rgb(250,250,250),
+    0 0 80px rgb(250,250,250),
+    0 0 90px rgb(250,250,250),
+    0 0 100px rgb(250,250,250),
+    0 0 150px rgb(250,250,250);
+}
 #userinput{
+  float: right;
   width: 100%;
   min-height: 60px;
   position: fixed;

@@ -63,7 +63,7 @@ func randToken() string {
 func init() {
   //initDB();
 	store.Options = &sessions.Options{
-		Domain:   "127.0.0.1",
+		Domain:   "http://damp-tor-15088.herokuapp.com",
 		Path:     "/",
 		MaxAge:   3600 * 8, // 8 hours
 		HttpOnly: true,
@@ -81,7 +81,7 @@ func init() {
 	conf = &oauth2.Config{
 		ClientID:     cred.Cid,
 		ClientSecret: cred.Csecret,
-		RedirectURL:  "http://127.0.0.1:8000/auth",
+		RedirectURL:  "http://damp-tor-15088.herokuapp.com:80/auth",
 		Scopes: []string{
 			// scopes allow you to selectively choose the permissions you need access to
 			// for simple login you can just use userinfo.email
