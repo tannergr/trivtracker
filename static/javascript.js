@@ -108,7 +108,7 @@ function UpdateMarkers(isWelcome){
   $.getJSON(urlstring, null, (r)=>{
     r.forEach((place)=>{
       var marker = new google.maps.Marker({
-        icon: './trivia.png',
+        icon: getIcon(place),
         position: new google.maps.LatLng(place.lat, place.long),
         map: map
       });
@@ -153,4 +153,20 @@ function infoWindowBuilder(place){
     str += "<p>" + place.comments + "</p>";
   str += "<a  href=\"#\" onclick=\"sidepanel(\`"+place.mapsid +"\`)\">More Info</a>";
   return str;
+}
+function getIcon(place){
+  switch(place.etype){
+    case "Trivia":
+      return "trivia.png";
+      break;
+    case "Karaoke":
+      return "karaoke.png";
+      break;
+    case "Open Mic":
+      return "openmic.png";
+      break;
+    case "Comedy":
+      return "comedy.png";
+      break;
+  }
 }
