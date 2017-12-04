@@ -98,7 +98,8 @@ func main() {
     router.HandleFunc("/places", GetPlaces).Methods("GET")
     router.HandleFunc("/places", CreatePlace).Methods("PUT")
     router.HandleFunc("/places/{id}", DeletePlace).Methods("DELETE")
-    //router.HandleFunc("/edit", adminHome)
+    router.HandleFunc("/edit", adminHome)
+
     router.HandleFunc("/login", loginHandler)
   	router.HandleFunc("/auth", authHandler)
   	router.HandleFunc("/user", userHandler)
