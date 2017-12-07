@@ -63,7 +63,7 @@ func randToken() string {
 func init() {
   initDB();
 	store.Options = &sessions.Options{
-		Domain:   "https://www.weneverdoanything.com:80/auth",
+		Domain:   "https://www.weneverdoanything.com/",
 		Path:     "/",
 		MaxAge:   3600 * 8, // 8 hours
 		HttpOnly: true,
@@ -83,7 +83,7 @@ func init() {
 	conf = &oauth2.Config{
 		ClientID:     cred.Cid,
 		ClientSecret: cred.Csecret,
-		RedirectURL:  "https://www.weneverdoanything.com:80/auth",
+		RedirectURL:  "https://www.weneverdoanything.com/auth",
 		Scopes: []string{
 			// scopes allow you to selectively choose the permissions you need access to
 			// for simple login you can just use userinfo.email
