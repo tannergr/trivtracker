@@ -3,7 +3,7 @@ cred.go
 trivtracker
 creds.json
 Dockerfile
-
+*.xcf
 # Elastic Beanstalk Files
 .elasticbeanstalk/*
 !.elasticbeanstalk/*.cfg.yml
