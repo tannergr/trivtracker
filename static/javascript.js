@@ -45,6 +45,7 @@ function initAutocomplete() {
       map.setCenter(searchBox.getPlaces()[0].geometry.location);
       UpdateMarkers();
     });
+    UpdateMarkers();
     init();
   }
 }
