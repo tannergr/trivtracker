@@ -89,7 +89,7 @@ func init() {
 func main() {
     router := mux.NewRouter()
     router.HandleFunc("/places", GetPlaces).Methods("GET")
-    router.HandleFunc("/place/{id}", GetPlace).Methods("GET")
+    router.HandleFunc("/places/{id}", GetPlace).Methods("GET")
     router.HandleFunc("/places", CreatePlace).Methods("PUT")
     router.HandleFunc("/places/{id}", DeletePlace).Methods("DELETE")
 
