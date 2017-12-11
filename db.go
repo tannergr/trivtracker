@@ -65,7 +65,7 @@ func getAllPlaces(lat string, long string, day string, etype string)([]*Place){
   return templaces
 }
 func getPlaceDB(id int)([]*Place){
-  rows, err := db.Query("SELECT ID, MapsID, barname, etype, DayOfWeek, comments, lat, long FROM places where id=$1", &plc.id)
+  rows, err := db.Query("SELECT ID, MapsID, barname, etype, DayOfWeek, comments, lat, long FROM places where id=$1", id)
   if err != nil {
     log.Fatal(err)
   }
