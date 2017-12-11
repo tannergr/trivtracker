@@ -121,6 +121,8 @@ function UpdateMarkers(isWelcome){
           lastwindow.close();
         infowindow.open(map, marker);
         lastwindow = infowindow;
+        map.setCenter(marker.getPosition());
+        window.location.hash = place.ID;
       });
       markers.push(marker);
     })});
