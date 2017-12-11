@@ -116,6 +116,11 @@ function UpdateMarkers(isWelcome){
       var infowindow = new google.maps.InfoWindow({
         content: infoWindowBuilder(place)
       });
+      if(place.id == window.location.hash){
+        infowindow.open(map, marker);
+        lastwindow = infowindow;
+        map.panTo(marker.getPosition());
+      }
       marker.addListener('click', function() {
         if(lastwindow)
           lastwindow.close();
