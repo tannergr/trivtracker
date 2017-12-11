@@ -70,6 +70,7 @@ func getPlaceDB(id int)([]*Place){
     log.Fatal(err)
   }
   defer rows.Close()
+  templaces := make([]*Place,0)
   for rows.Next() {
     plc := new(Place)
     err := rows.Scan(&plc.ID, &plc.MapsID, &plc.Barname, &plc.EType, &plc.DayOfWeek, &plc.Comments, &plc.Lat, &plc.Long)
