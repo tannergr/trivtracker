@@ -28,6 +28,14 @@ func CreatePlace(w http.ResponseWriter, r *http.Request) {
       http.Error(w, "Permission Denied", 403)
     }
 }
+func GetPlace(w http.ResponseWriter, r *http.Request){
+  id, err := strconv.Atoi(params["id"])
+  if err != nil {
+    log.Fatal(err)
+  }
+  templace := getPlaceDB(id)
+  json.NewEncoder(w).Encode(templace)
+}
 
 // Display all from the people var
 func GetPlaces(w http.ResponseWriter, r *http.Request){

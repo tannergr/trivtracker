@@ -70,13 +70,6 @@ func init() {
 	}
 
 	gob.Register(&User{})
-	// file, err := ioutil.ReadFile("./creds.json")
-	// if err != nil {
-	// 	fmt.Printf("File Error: %v\n", err)
-	// 	os.Exit(1)
-	// }
-  //
-	// json.Unmarshal(file, &cred)
   cred.Cid = os.Getenv("Cid")
   cred.Csecret = os.Getenv("Csecret")
 
@@ -96,9 +89,9 @@ func init() {
 func main() {
     router := mux.NewRouter()
     router.HandleFunc("/places", GetPlaces).Methods("GET")
+    router.HandleFunc("/place/{id}", GetPlace).Mathods("GET")
     router.HandleFunc("/places", CreatePlace).Methods("PUT")
     router.HandleFunc("/places/{id}", DeletePlace).Methods("DELETE")
-    //router.HandleFunc("/edit", adminHome)
 
     router.HandleFunc("/login", loginHandler)
   	router.HandleFunc("/auth", authHandler)

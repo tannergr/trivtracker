@@ -64,6 +64,23 @@ func getAllPlaces(lat string, long string, day string, etype string)([]*Place){
   }
   return templaces
 }
+func getPlaceDB(id int)([]*Place){
+  rows, err := db.Query("SELECT ID, MapsID, barname, etype, DayOfWeek, comments, lat, long FROM places where id=$1", &plc.id)
+  if err != nil {
+    log.Fatal(err)
+  }
+  defer rows.Close()
+  for rows.Next() {
+    plc := new(Place)
+    err := rows.Scan(&plc.ID, &plc.MapsID, &plc.Barname, &plc.EType, &plc.DayOfWeek, &plc.Comments, &plc.Lat, &plc.Long)
+    if err != nil {
+      log.Fatal(err)
+    }
+    templaces = append(templaces, plc)
+  }
+  return templaces
+}
+
 func deleteDB(id int)(sql.Result){
   res, err := db.Exec("Delete from places where id=$1", id)
   if err != nil {
