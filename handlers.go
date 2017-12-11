@@ -29,6 +29,7 @@ func CreatePlace(w http.ResponseWriter, r *http.Request) {
     }
 }
 func GetPlace(w http.ResponseWriter, r *http.Request){
+  params := mux.Vars(r)
   id, err := strconv.Atoi(params["id"])
   if err != nil {
     log.Fatal(err)
