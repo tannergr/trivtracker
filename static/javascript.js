@@ -63,7 +63,8 @@ function init(){
       console.log("event change");
       UpdateMarkers();
     });
-    $('.ui.small.modal').modal('show');
+    if(window.location.hash == "")
+      $('.ui.small.modal').modal('show');
     $('#uselocationbutton').click(()=>{
       navigator.geolocation.getCurrentPosition(setLocation);
     });
@@ -116,6 +117,7 @@ function UpdateMarkers(isWelcome){
       var infowindow = new google.maps.InfoWindow({
         content: infoWindowBuilder(place)
       });
+      console.log(place.id + " == " + window.location.hash);
       if(place.id == window.location.hash){
         infowindow.open(map, marker);
         lastwindow = infowindow;
