@@ -23,12 +23,12 @@ func CreatePlace(w http.ResponseWriter, r *http.Request) {
       var place Place
       _ = json.NewDecoder(r.Body).Decode(&place)
       insertPlace(place, w)
-      w.Write("entered production")
+      w.Write([]byte("entered production"))
     } else {
       var place Place
       _ = json.NewDecoder(r.Body).Decode(&place)
       insertSuggestedPlace(place, w)
-      w.Write("Suggested")
+      w.Write([]byte("Suggested"))
     }
 }
 func GetPlace(w http.ResponseWriter, r *http.Request){
