@@ -1,5 +1,5 @@
--- DROP Table places;
-CREATE TABLE Places (
+DROP Table suggestedplaces;
+CREATE TABLE suggestedplaces (
   ID    SERIAL UNIQUE,
   MapsID varchar(255) NOT NULL,
   Barname   varchar(255) NOT NULL,
@@ -13,7 +13,4 @@ CREATE TABLE Places (
   CHECK (DayOfWeek <> '')
 );
 
-INSERT INTO Places (MapsID, Barname, eType, DayOfWeek, Comments, Lat, Long) VALUES
-('6c9a3577b23b9d4eec9dfb3b1054c819e5f71883', 'Kitchen Table', 'Trivia', 'Thursday', 'Hello world!', 49.271417, -123.15483);
-
-ALTER TABLE Places ADD PRIMARY KEY (ID);
+ALTER TABLE suggestedplaces ADD PRIMARY KEY (ID);

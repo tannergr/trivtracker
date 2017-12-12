@@ -25,7 +25,10 @@ func CreatePlace(w http.ResponseWriter, r *http.Request) {
       insertPlace(place, w)
       json.NewEncoder(w).Encode(place)
     } else {
-      http.Error(w, "Permission Denied", 403)
+      var place Place
+      _ = json.NewDecoder(r.Body).Decode(&place)
+      insertSuggestedPlace(place, w)
+      json.NewEncoder(w).Encode(place)
     }
 }
 func GetPlace(w http.ResponseWriter, r *http.Request){

@@ -39,6 +39,17 @@ func insertPlace(place Place, w http.ResponseWriter){
     return
   }
 }
+
+func insertSuggestedPlace(place Place, w http.ResponseWriter){
+  _, err := db.Exec("INSERT INTO suggestedplaces (mapsid, barname, etype, dayofweek, comments, lat, long) VALUES($1, $2, $3, $4, $5, $6, $7)",
+   place.MapsID, place.Barname, place.EType, place.DayOfWeek, place.Comments, place.Lat, place.Long)
+  if err != nil {
+    fmt.Print(err)
+    http.Error(w, http.StatusText(500), 500)
+    return
+  }
+}
+
 func getAllPlaces(lat string, long string, day string, etype string)([]*Place){
   if(day=="" || day=="All") {day = "%";}
   if(etype=="" || etype=="All") {etype = "%";}
