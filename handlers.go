@@ -23,12 +23,12 @@ func CreatePlace(w http.ResponseWriter, r *http.Request) {
       var place Place
       _ = json.NewDecoder(r.Body).Decode(&place)
       insertPlace(place, w)
-      w.write("entered production")
+      w.Write("entered production")
     } else {
       var place Place
       _ = json.NewDecoder(r.Body).Decode(&place)
       insertSuggestedPlace(place, w)
-      w.write("Suggested")
+      w.Write("Suggested")
     }
 }
 func GetPlace(w http.ResponseWriter, r *http.Request){
@@ -50,7 +50,7 @@ func GetPlaces(w http.ResponseWriter, r *http.Request){
 
 func DeletePlace(w http.ResponseWriter, r *http.Request){
   user := getUser(w,r)
-  if checkDBadmin(user != nill && user.Sub){
+  if checkDBadmin(user != nil && user.Sub){
     params := mux.Vars(r)
     id, err := strconv.Atoi(params["id"])
     if err != nil {
