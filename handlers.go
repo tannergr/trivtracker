@@ -150,9 +150,9 @@ func getUser(w http.ResponseWriter, r *http.Request)(*User){
   }
 
   val := session.Values["user"]
+  //changed from panicing when no user cookies to return nil
   if _, ok := val.(*User); !ok {
-    httpError(w, err, "getting user from session ")
-    panic(" ")
+    return nil
   }
   return val.(*User)
 }
