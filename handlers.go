@@ -19,7 +19,7 @@ import (
 func CreatePlace(w http.ResponseWriter, r *http.Request) {
     //params := mux.Vars(r)
     user := getUser(w,r)
-    if (user==nil || checkDBadmin(user.Sub)){
+    if (user!=nil && checkDBadmin(user.Sub)){
       var place Place
       _ = json.NewDecoder(r.Body).Decode(&place)
       insertPlace(place, w)
