@@ -15,7 +15,7 @@ $(document).ready(()=>{
         data: JSON.stringify(newEntry),
         headers: {"accessToken": "accessToken"},
         success: function(result) {
-            //console.log(result);
+            console.log(result);
         }
     });
   })
