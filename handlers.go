@@ -50,7 +50,7 @@ func GetPlaces(w http.ResponseWriter, r *http.Request){
 
 func DeletePlace(w http.ResponseWriter, r *http.Request){
   user := getUser(w,r)
-  if (user != nil && checkDBadmin(&& user.Sub)){
+  if (user != nil && checkDBadmin(user.Sub)){
     params := mux.Vars(r)
     id, err := strconv.Atoi(params["id"])
     if err != nil {
