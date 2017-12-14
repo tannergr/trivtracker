@@ -19,14 +19,26 @@ import (
 func CreatePlace(w http.ResponseWriter, r *http.Request) {
     //params := mux.Vars(r)
     user := getUser(w,r)
-    if checkDBadmin(user.Sub){
+    if (user!=nil && checkDBadmin(user.Sub)){
       var place Place
       _ = json.NewDecoder(r.Body).Decode(&place)
       insertPlace(place, w)
-      json.NewEncoder(w).Encode(place)
+      w.write("entered production")
     } else {
-      http.Error(w, "Permission Denied", 403)
+      var place Place
+      _ = json.NewDecoder(r.Body).Decode(&place)
+      insertSuggestedPlace(place, w)
+      w.write("Suggested")
     }
+}
+func GetPlace(w http.ResponseWriter, r *http.Request){
+  params := mux.Vars(r)
+  id, err := strconv.Atoi(params["id"])
+  if err != nil {
+    log.Fatal(err)
+  }
+  templace := getPlaceDB(id)
+  json.NewEncoder(w).Encode(templace)
 }
 
 // Display all from the people var
@@ -38,7 +50,7 @@ func GetPlaces(w http.ResponseWriter, r *http.Request){
 
 func DeletePlace(w http.ResponseWriter, r *http.Request){
   user := getUser(w,r)
-  if checkDBadmin(user.Sub){
+  if checkDBadmin(user != nill && user.Sub){
     params := mux.Vars(r)
     id, err := strconv.Atoi(params["id"])
     if err != nil {
@@ -138,9 +150,9 @@ func getUser(w http.ResponseWriter, r *http.Request)(*User){
   }
 
   val := session.Values["user"]
+  //changed from panicing when no user cookies to return nil
   if _, ok := val.(*User); !ok {
-    httpError(w, err, "getting user from session ")
-    panic(" ")
+    return nil
   }
   return val.(*User)
 }

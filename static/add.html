@@ -18,7 +18,7 @@
        fjs.parentNode.insertBefore(js, fjs);
      }(document, 'script', 'facebook-jssdk'));
  </script>
-  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="style.css">
   <script
     src="https://code.jquery.com/jquery-3.2.1.min.js"
     integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
@@ -26,11 +26,11 @@
   <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js">
   </script>
 
+  <script src="add.js">
+  </script>
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBxoB_lMLGScuwVei5rmN-usckcNu_tMj0&libraries=places&callback=initAutocomplete"
        async defer></script>
 
-  <script src="../add.js">
-  </script>
 </head>
 
 <body style="background-color: rgba(231, 76, 60,1.0)">
@@ -40,12 +40,13 @@
 <div id="addinput">
   <form>
     <table>
+      <tr class="instruction one"><td colspan="2"> Step 1: Search for the location on the map </td></tr>
     <tr> <td>Search: </td><td><input id="location" type="text" placeholder="Location"></input></td></tr>
-    <tr> <td>Name:</td><td><input type="text" id="name" value="tanner"> </input> </td></tr>
-    <tr> <td>MapID:</td><td><input type="text" id="mapsid"> </input> </td></tr>
-    <tr> <td>Lat: </td><td><input type="number" id="lat" step="0.0000001" value="49.270995"></input></td> </tr>
-    <tr> <td>Long:</td><td><input type="number" id="long" step="0.0000001" value="-123.156155"></input></td></tr>
-
+    <tr style="display:none"> <td>Name:</td><td><input  type="text" id="name" value="tanner"> </input> </td></tr>
+    <tr style="display:none"> <td>MapID:</td><td><input  type="text" id="mapsid"> </input> </td></tr>
+    <tr style="display:none"> <td>Lat: </td><td><input  type="number" id="lat" step="0.0000001" value="49.270995"></input></td> </tr>
+    <tr style="display:none"> <td>Long:</td><td><input  type="number" id="long" step="0.0000001" value="-123.156155"></input></td></tr>
+      <tr class="instruction two"><td colspan="2"> Step 2: Choose an event class </td></tr>
     <tr> <td>Type:</td><td>
       <Select id="etype">
       <option value="Trivia">Trivia</option>
@@ -54,7 +55,7 @@
       <option value="Comedy">Comedy</option>
       </select>
     </td></tr>
-
+    <tr class="instruction three"><td colspan="2"> Step 3: Choose a day of the week </td></tr>
     <tr> <td>Day: </td><td>
       <Select id="dayInput" name="day">
         <option value="Monday">Monday</option>
@@ -62,10 +63,11 @@
         <option value="Wednesday">Wednesday</option>
         <option value="Thursday">Thursday</option>
         <option value="Friday">Friday</option>
-        <option value="Saterday">Saterday</option>
+        <option value="Saturday">Saturday</option>
         <option value="Sunday">Sunday</option>
       </select>
       </td></tr>
+      <tr class="instruction four"><td colspan="2"> Step 4: Any event datails? Start time? Prizes? </td></tr>
       <tr> <td>Comments</td><td><textarea id="comments"></textarea></td></tr>
 
     </table>

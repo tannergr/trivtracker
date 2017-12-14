@@ -63,27 +63,20 @@ func randToken() string {
 func init() {
   initDB();
 	store.Options = &sessions.Options{
-		Domain:   "http://damp-tor-15088.herokuapp.com",
+		Domain:   "https://www.weneverdoanything.com/",
 		Path:     "/",
 		MaxAge:   3600 * 8, // 8 hours
 		HttpOnly: true,
 	}
 
 	gob.Register(&User{})
-	// file, err := ioutil.ReadFile("./creds.json")
-	// if err != nil {
-	// 	fmt.Printf("File Error: %v\n", err)
-	// 	os.Exit(1)
-	// }
-  //
-	// json.Unmarshal(file, &cred)
   cred.Cid = os.Getenv("Cid")
   cred.Csecret = os.Getenv("Csecret")
 
 	conf = &oauth2.Config{
 		ClientID:     cred.Cid,
 		ClientSecret: cred.Csecret,
-		RedirectURL:  "http://damp-tor-15088.herokuapp.com:80/auth",
+		RedirectURL:  "https://www.weneverdoanything.com/auth",
 		Scopes: []string{
 			// scopes allow you to selectively choose the permissions you need access to
 			// for simple login you can just use userinfo.email
@@ -96,9 +89,9 @@ func init() {
 func main() {
     router := mux.NewRouter()
     router.HandleFunc("/places", GetPlaces).Methods("GET")
+    router.HandleFunc("/places/{id}", GetPlace).Methods("GET")
     router.HandleFunc("/places", CreatePlace).Methods("PUT")
     router.HandleFunc("/places/{id}", DeletePlace).Methods("DELETE")
-    //router.HandleFunc("/edit", adminHome)
 
     router.HandleFunc("/login", loginHandler)
   	router.HandleFunc("/auth", authHandler)

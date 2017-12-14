@@ -45,6 +45,7 @@ function initAutocomplete() {
       map.setCenter(searchBox.getPlaces()[0].geometry.location);
       UpdateMarkers();
     });
+    UpdateMarkers();
     init();
   }
 }
@@ -62,7 +63,8 @@ function init(){
       console.log("event change");
       UpdateMarkers();
     });
-    $('.ui.small.modal').modal('show');
+    if(window.location.hash == "")
+      $('.ui.small.modal').modal('show');
     $('#uselocationbutton').click(()=>{
       navigator.geolocation.getCurrentPosition(setLocation);
     });
@@ -115,11 +117,18 @@ function UpdateMarkers(isWelcome){
       var infowindow = new google.maps.InfoWindow({
         content: infoWindowBuilder(place)
       });
+      if("#" + place.id == window.location.hash){
+        infowindow.open(map, marker);
+        lastwindow = infowindow;
+        map.panTo(marker.getPosition());
+      }
       marker.addListener('click', function() {
         if(lastwindow)
           lastwindow.close();
         infowindow.open(map, marker);
         lastwindow = infowindow;
+        map.panTo(marker.getPosition());
+        window.location.hash = place.id;
       });
       markers.push(marker);
     })});
