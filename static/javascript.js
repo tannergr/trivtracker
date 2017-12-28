@@ -117,7 +117,9 @@ function UpdateMarkers(isWelcome){
       var infowindow = new InfoBubble({
         content: infoWindowBuilder(place),
         borderRadius: 0,
-        borderWidth: 0
+        borderWidth: 0,
+        backgroundColor: 'rgba(255,255,255,0.4)',
+        hideCloseButton: true,
       });
       if("#" + place.id == window.location.hash){
         infowindow.open(map, marker);
