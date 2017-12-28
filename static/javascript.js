@@ -117,8 +117,8 @@ function UpdateMarkers(isWelcome){
       var infowindow = new google.maps.InfoWindow({
         content: infoWindowBuilder(place),
         borderRadius: 0,
-        borderWidth: 0,
-        backgroundColor: 'rgba(255,255,255,0.8)'
+        borderWidth: 0
+        // backgroundColor: 'rgba(255,255,255,0.8)'
       });
       if("#" + place.id == window.location.hash){
         infowindow.open(map, marker);
