@@ -255,3 +255,12 @@ p.welcome{
 .addbutton:hover{
   background-color: rgba(255,255,255,0.5);
 }
+.moreInfo{
+  background-color: rgba(52, 73, 94,1);
+  color: white;
+  padding: 5px;
+  text-decoration: none;
+}
+.moreing:hover{
+  background-color: rgba(52, 73, 94,0.7);
+}
