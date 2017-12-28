@@ -8,6 +8,14 @@
     src="https://code.jquery.com/jquery-3.2.1.min.js"
     integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
     crossorigin="anonymous"></script>
+  <script>
+           var script = '<script src="infobubble';
+           if (document.location.search.indexOf('compiled') !== -1) {
+             script += '-compiled';
+           }
+           script += '.js"><' + '/script>';
+           document.write(script);
+  </script>
   <script type="text/javascript" src="mapstyle.js"></script>
   <script src="javascript.js"></script>
 
@@ -34,14 +42,7 @@
   <script src="google-places.js"></script>
   <link href="google-places.css" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
-  <script>
-           var script = '<script src="infobubble';
-           if (document.location.search.indexOf('compiled') !== -1) {
-             script += '-compiled';
-           }
-           script += '.js"><' + '/script>';
-           document.write(script);
-  </script>
+
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-105645822-2"></script>
