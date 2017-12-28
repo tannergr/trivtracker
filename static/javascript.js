@@ -16,7 +16,7 @@ function initAutocomplete() {
     center: {lat: mapstart.lat, lng: mapstart.long},
       zoom: 13,
       mapTypeId: 'roadmap',
-      //styles: mapstyle,
+      styles: mapstyle,
       zoomControlOptions: {
                       style: google.maps.ZoomControlStyle.SMALL,
                       position: google.maps.ControlPosition.RIGHT_BOTTOM
@@ -118,7 +118,6 @@ function UpdateMarkers(isWelcome){
         content: infoWindowBuilder(place),
         borderRadius: 0,
         borderWidth: 0
-        // backgroundColor: 'rgba(255,255,255,0.8)'
       });
       if("#" + place.id == window.location.hash){
         infowindow.open(map, marker);
