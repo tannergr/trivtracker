@@ -114,7 +114,7 @@ function UpdateMarkers(isWelcome){
         position: new google.maps.LatLng(place.lat, place.long),
         map: map
       });
-      var infowindow = new google.maps.InfoWindow({
+      var infowindow = new InfoBubble({
         content: infoWindowBuilder(place),
         borderRadius: 0,
         borderWidth: 0
