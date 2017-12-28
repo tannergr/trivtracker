@@ -12,13 +12,6 @@ var userposition = {};
 userposition.set = false;
 function initAutocomplete() {
   window.onload =()=>{
-    var script = '<script src="infobubble';
-    if (document.location.search.indexOf('compiled') !== -1) {
-      script += '-compiled';
-    }
-    script += '.js"><' + '/script>';
-    document.write(script);
-
     map = new google.maps.Map(document.getElementById('map'), {
     center: {lat: mapstart.lat, lng: mapstart.long},
       zoom: 13,
