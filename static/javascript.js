@@ -118,8 +118,10 @@ function UpdateMarkers(isWelcome){
         content: infoWindowBuilder(place),
         borderRadius: 0,
         borderWidth: 0,
-        backgroundColor: 'rgba(255,255,255,0.4)',
+        backgroundColor: 'rgba(255,255,255,0.8)',
         hideCloseButton: true,
+        shadowStyle: 0,
+        padding: 10,
       });
       if("#" + place.id == window.location.hash){
         infowindow.open(map, marker);
