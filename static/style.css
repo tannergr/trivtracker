@@ -256,7 +256,7 @@ p.welcome{
   background-color: rgba(255,255,255,0.5);
 }
 .gm-style .gm-style-iw {
-         background-color: #3C61AD !important;
+         background-color: rgba(255,255,255,0.8) !important;
          top: 0 !important;
          left: 0 !important;
          width: 100% !important;
