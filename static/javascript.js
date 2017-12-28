@@ -38,7 +38,11 @@ function initAutocomplete() {
     map.addListener('bounds_changed', function() {
       searchBox.setBounds(map.getBounds());
     });
-
+    // close info bubble when map clicked
+    google.maps.event.addListener(map, "click", function(event) {
+      if(lastwindow)
+        lastwindow.close();
+      }
     // Listen for the event fired when the user selects a prediction and retrieve
     // more details for that place.
     searchBox.addListener('places_changed', function() {
@@ -118,7 +122,7 @@ function UpdateMarkers(isWelcome){
         content: infoWindowBuilder(place),
         borderRadius: 0,
         borderWidth: 0,
-        backgroundColor: 'rgba(255,255,255,0.8)',
+        backgroundColor: 'rgba(255,255,255,0.9)',
         hideCloseButton: true,
         shadowStyle: 0,
         padding: 10,
