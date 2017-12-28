@@ -231,8 +231,27 @@ p.welcome{
   bottom: 0;
   left: 0;
   position:fixed;
+  padding: 20px;
+  font-size: 24px;
+}
+.adminlogin>a:hover{
+  color: white;
 }
 .adminlogin>a{
   text-decoration: none;
   color: black;
+}
+.addbutton{
+  font-family: 'Raleway', sans-serif;
+  color: white;
+  font-size: 24px;
+  margin: 0;
+  margin-right: 5px;
+  text-decoration: none;
+  float: right;
+  border-radius: 3px;
+  padding: 10px;
+}
+.addbutton:hover{
+  background-color: rgba(255,255,255,0.5);
 }
