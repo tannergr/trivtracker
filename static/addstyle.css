@@ -1,0 +1,77 @@
+a[href^="http://maps.google.com/maps"],
+a[href^="https://maps.google.com/maps"],
+a[href^="https://www.google.com/maps"] {
+    display: none !important;
+}
+.gmnoprint:not(.gm-bundled-control) {
+    display: none;
+}
+.gm-bundled-control .gmnoprint {
+    display: block;
+}
+.pac-container:after {
+    /* Disclaimer: not needed to show 'powered by Google' if also a Google Map is shown */
+
+    background-image: none !important;
+    height: 0px;
+}
+ /* Optional: Makes the sample page fill the window. */
+html, body {
+   height: 100%;
+   margin: 0;
+   padding: 0;
+   font-family: 'Raleway', sans-serif;
+}
+.submitCreate{
+  text-decoration: none;
+  padding: 10px;
+  color: white;
+  background-color: rgba(255,255,255,0.4)
+}
+.submitCreate:hover{
+  background-color: rgba(255,255,255,0.7)
+}
+#addmap{
+  height: 100%;
+  width: 50%;
+  float: left;
+}
+#addinput{
+  padding-top: 25px;
+  margin-left: 55%;
+}
+#dayInput, #etype, #comments{
+  font-family: 'Raleway', sans-serif;
+  background-color: transparent;
+  border: none;
+  border-bottom: solid 1px;
+  border-color: white;
+  color: white;
+  font-size: 24px;
+  margin: 0 0 21px 0px;
+}
+#dayInput>option, #etype>option{
+  background-color: rgba(192, 57, 43,1.0);
+  color: white
+}
+#Day, #event, option{
+  font-family: 'Raleway', sans-serif;
+  background-color: transparent;
+  border: none;
+  border-bottom: solid 1px;
+  border-color: white;
+  color: white;
+  font-size: 24px;
+  padding-bottom: 1px;
+  margin: 10px 0 10px 20px;
+}
+#location{
+  background-color: transparent;
+  border: none;
+  border-bottom: solid 1px;
+  border-color: white;
+  color: white;
+  font-size: 24px;
+  margin: 10px 0 10px 20px;
+  font-family: 'Raleway', sans-serif;
+}

@@ -15,7 +15,9 @@ $(document).ready(()=>{
         data: JSON.stringify(newEntry),
         headers: {"accessToken": "accessToken"},
         success: function(result) {
-            console.log(result);
+            if(result="suggested"){
+              alert("Thank you for your suggestion")
+            }
         }
     });
   })
