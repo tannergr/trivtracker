@@ -268,3 +268,9 @@ h1.header, h2.header{
   padding:0;
   margin:0;
 }
+h1.header{
+  color:#16a085;
+}
+h2.header{
+  color:#2ecc71;
+}
