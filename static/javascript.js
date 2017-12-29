@@ -119,6 +119,7 @@ function UpdateMarkers(isWelcome){
         map: map
       });
       var infowindow = new InfoBubble({
+        title: place.barname,
         content: infoWindowBuilder(place),
         borderRadius: 0,
         borderWidth: 0,
@@ -166,7 +167,7 @@ function sidepanel(mapsid){
 
 function infoWindowBuilder(place){
   var str = "";
-  str += "<h1 class=\"header\">" + place.barname + "</h1>";
+  // str += "<h1 class=\"header\">" + place.barname + "</h1>";
   str += "<h2>" + place.etype + " - " + place.dayofweek + "</h2>";
   if(place.comments)
     str += "<p>" + place.comments + "</p>";
