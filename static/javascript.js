@@ -163,6 +163,12 @@ function sidepanel(mapsid){
       $('.ui.sidebar').sidebar('toggle');
   });
 }
+function share(){
+  FB.ui({
+      method: 'send',
+      link: window.location,
+    });
+}
 
 function infoWindowBuilder(place){
   var str = "";
@@ -170,11 +176,10 @@ function infoWindowBuilder(place){
   str += "<h2 class=\"header\">" + place.etype + " - " + place.dayofweek + "</h2>";
   if(place.comments)
     str += "<p>" + place.comments + "</p>";
-  str += "<a class=\"moreInfo\"  href=\"#\" onclick=\"sidepanel(\`"+place.mapsid +"\`)\">More Info</a>";
-  str += `<div class="fb-send"
-    data-href=` + window.location + ` 
-    data-layout="button_count">
-  </div>`
+    str += "<a class=\"moreInfo\"  href=\"#\" onclick=\"sidepanel(\`"+place.mapsid +"\`)\">More Info</a>";
+    str += `<a class="moreInfo"  href="#" onclick="share()">More Info</a>"`;
+
+
   return str;
 }
 function getIcon(place){
