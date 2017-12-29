@@ -178,7 +178,7 @@ function infoWindowBuilder(place){
   str += "<h2 class=\"header\">" + place.etype + " - " + place.dayofweek + "</h2>";
   if(place.comments)
     str += "<p>" + place.comments + "</p>";
-    str += "<a class=\"moreInfo\"  href=\"#\" onclick=\"sidepanel(\`"+place.mapsid +"\`)\">More Info</a>";
+    str += "<br><a class=\"moreInfo\"  href=\"#\" onclick=\"sidepanel(\`"+place.mapsid +"\`)\">More Info</a>";
     // str += `<br><a class="moreInfo"  href="#" onclick="share()">Send</a>`;
 
 
