@@ -261,6 +261,10 @@ p.welcome{
   padding: 5px;
   text-decoration: none;
 }
-.moreing:hover{
+.moreInfo:hover{
   background-color: rgba(52, 73, 94,0.7);
+}
+h1.header{
+  background-color: rgba(100,100,100,1);
+  width: 100%;
 }
