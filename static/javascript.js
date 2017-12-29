@@ -166,7 +166,7 @@ function sidepanel(mapsid){
 function share(){
   FB.ui({
       method: 'send',
-      link: window.location,
+      link: "https://weneverdoanything.com",
     });
 }
 
@@ -177,7 +177,7 @@ function infoWindowBuilder(place){
   if(place.comments)
     str += "<p>" + place.comments + "</p>";
     str += "<a class=\"moreInfo\"  href=\"#\" onclick=\"sidepanel(\`"+place.mapsid +"\`)\">More Info</a>";
-    str += `<a class="moreInfo"  href="#" onclick="share()">More Info</a>"`;
+    str += `<br><a class="moreInfo"  href="#" onclick="share()">Send</a>`;
 
 
   return str;
