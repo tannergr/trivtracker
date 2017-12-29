@@ -125,7 +125,7 @@ function UpdateMarkers(isWelcome){
         backgroundColor: 'rgba(255,255,255,0.9)',
         hideCloseButton: true,
         shadowStyle: 0,
-        padding: 10,
+        padding: 0,
       });
       if("#" + place.id == window.location.hash){
         infowindow.open(map, marker);

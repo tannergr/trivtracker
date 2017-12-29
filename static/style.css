@@ -265,6 +265,6 @@ p.welcome{
   background-color: rgba(52, 73, 94,0.7);
 }
 h1.header{
-  background-color: rgba(100,100,100,1);
+  background-color: rgba(100,100,100,0.1);
   width: 100%;
 }
