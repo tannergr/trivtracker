@@ -171,6 +171,10 @@ function infoWindowBuilder(place){
   if(place.comments)
     str += "<p>" + place.comments + "</p>";
   str += "<a class=\"moreInfo\"  href=\"#\" onclick=\"sidepanel(\`"+place.mapsid +"\`)\">More Info</a>";
+  str += `<div class="fb-send"
+    data-href=` + window.location + ` 
+    data-layout="button_count">
+  </div>`
   return str;
 }
 function getIcon(place){
