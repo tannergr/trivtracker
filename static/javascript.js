@@ -126,8 +126,8 @@ function UpdateMarkers(isWelcome){
         hideCloseButton: true,
         shadowStyle: 0,
         padding: 10,
-        width: 300,
-        height: 300,
+        maxWidth: 300,
+        maxHeight: 300,
       });
       if("#" + place.id == window.location.hash){
         infowindow.open(map, marker);
