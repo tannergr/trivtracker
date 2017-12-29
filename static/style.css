@@ -260,6 +260,7 @@ p.welcome{
   color: white;
   padding: 5px;
   text-decoration: none;
+  margin: 20px;
 }
 .moreInfo:hover{
   background-color: rgba(52, 73, 94,0.7);
