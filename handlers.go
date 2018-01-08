@@ -125,7 +125,7 @@ func userHandler(w http.ResponseWriter, r *http.Request) {
   user := getUser(w,r)
   if checkDBadmin(user.Sub){
     fmt.Print("succeeedsd")
-    templ := template.Must(template.ParseFiles("./static/add.html"))
+    templ := template.Must(template.ParseFiles("./static/add/add.html"))
   	templ.Execute(w, user)
   } else {
     fmt.Print("Access Denied")

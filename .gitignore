@@ -10,3 +10,4 @@ creds.json
 !.elasticbeanstalk/*.global.yml
 .elasticbeanstalk/*
 Godeps/
+static/gimp
