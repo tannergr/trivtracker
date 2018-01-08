@@ -187,16 +187,16 @@ function infoWindowBuilder(place){
 function getIcon(place){
   switch(place.etype){
     case "Trivia":
-      return "trivia.png";
+      return "images/trivia.png";
       break;
     case "Karaoke":
-      return "karaoke.png";
+      return "images/karaoke.png";
       break;
     case "Open Mic":
-      return "openmic.png";
+      return "images/openmic.png";
       break;
     case "Comedy":
-      return "comedy.png";
+      return "images/comedy.png";
       break;
   }
 }

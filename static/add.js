@@ -16,7 +16,7 @@ $(document).ready(()=>{
         headers: {"accessToken": "accessToken"},
         success: function(result) {
             if(result="suggested"){
-              alert("Thank you for your suggestion")
+              alert("Thank you for your suggestion");
             }
         }
     });
