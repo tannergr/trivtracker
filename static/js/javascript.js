@@ -135,6 +135,7 @@ function UpdateMarkers(isWelcome){
         map.panTo(marker.getPosition());
       }
       marker.addListener('click', function() {
+        console.log("window click");
         if(lastwindow)
           lastwindow.close();
         infowindow.open(map, marker);
