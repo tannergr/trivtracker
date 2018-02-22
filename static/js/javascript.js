@@ -116,7 +116,8 @@ function UpdateMarkers(isWelcome){
       var marker = new google.maps.Marker({
         icon: getIcon(place),
         position: new google.maps.LatLng(place.lat, place.long),
-        map: map
+        map: map,
+        zIndex: MAX_ZINDEX
       });
       var infowindow = new InfoBubble({
         content: infoWindowBuilder(place),
