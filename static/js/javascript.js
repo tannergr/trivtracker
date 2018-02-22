@@ -117,7 +117,7 @@ function UpdateMarkers(isWelcome){
         icon: getIcon(place),
         position: new google.maps.LatLng(place.lat, place.long),
         map: map,
-        zIndex: MAX_ZINDEX
+        zIndex: 99999999;
       });
       var infowindow = new InfoBubble({
         content: infoWindowBuilder(place),
